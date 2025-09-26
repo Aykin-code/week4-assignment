@@ -5,7 +5,7 @@ const reviewDisplaySection = document.getElementById("app");
 // fetch() function is asynchronous
 async function fetchReviews() {
   // fetch() by default sends a GET request
-  const response = await fetch(`http://localhost:8080/reviews`);
+  const response = await fetch(`https://guestbook-test-rb6n.onrender.com`);
   const reviews = await response.json();
   createReviews(reviews);
 }
@@ -49,7 +49,8 @@ form.addEventListener("submit", async (event) => {
   console.log(userReview);
 
   // Now I need to send a POST request to my server
-  const response = await fetch(`http://localhost:8080/reviews`, {
+  const response = await fetch(`https://guestbook-test-rb6n.onrender.com`, {
+    // const response = await fetch(`http://localhost:8080/reviews`, {
     headers: {
       "Content-Type": "application/json",
     },
