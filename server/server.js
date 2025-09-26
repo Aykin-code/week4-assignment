@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 // a bit of fun
 app.get("/Connor", (req, res) => {
   res.send(
-    "I'm a lumberjack and I'm okay. I work all day and I <s>work</s> code all night!"
+    "I'm a lumberjack and I'm okay. I sleep all night and I <s>work</s> code all day!"
   );
 });
 
@@ -49,7 +49,7 @@ app.get("/reviews", async (req, res) => {
 
 // post reviews to the database
 app.post("/reviews", async (req, res) => {
-  // When the client sends up infromation it is always in the request.body
+  // REMEBER! When the client sends up infromation it is always in the request.body
   const body = req.body;
   const nameFromClient = req.body.name;
   const reviewFromClient = req.body.review;
