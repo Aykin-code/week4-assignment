@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>client</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <form id="form">
+      <input name="name" placeholder="Name" />
+      <input name="review" placeholder="Review" />
+      <input name="starrating" type="number" placeholder="5" />
+
+      <div class="review-card">
+        <div class="review-top">
+          <div id="nameBox" class="review-box"></div>
+          <div id="reviewBox" class="review-box"></div>
+        </div>
+        <div id="ratingBox" class="review-rating"></div>
+      </div>
+
+      <!-- maybe use this later when fully working ? -->
+      <!-- <fieldset>
+        <legend>Rating</legend>
+        <label
+          ><input type="radio" name="rating" value="1" required /> 1 ⭐</label
+        >
+        <label><input type="radio" name="rating" value="2" /> 2 ⭐⭐</label>
+        <label><input type="radio" name="rating" value="3" /> 3 ⭐⭐⭐</label>
+        <label><input type="radio" name="rating" value="4" /> 4 ⭐⭐⭐⭐</label>
+        <label
+          ><input type="radio" name="rating" value="5" /> 5 ⭐⭐⭐⭐⭐</label
+        >
+      </fieldset> -->
+      <button type="submit">Submit</button>
+    </form>
+    <div id="app"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
