@@ -1,13 +1,26 @@
 // this needs sorting, not displaying in the right order?
 const reviewDisplaySection = document.getElementById("app");
 
+// ===========================================
+// connection strings
+// for local testing use localhost, for deployed version use render link
+// comment out the one you aren't using
+
+const conLocal = "http://localhost:8080/reviews";
+const conRender = "https://guestbook-test-rb6n.onrender.com/reviews";
+
+//  set this variable to the connection you want to use - REMEMBER to change it when you deploying!!!!!!!!!!
+
+const conCurrent = conRender;
+// const conCurrent = conLocal;
+
+//  ===========================================
+
 // create a function to fetch data
 // fetch() function is asynchronous
 async function fetchReviews() {
-  // fetch() by default sends a GET request
-  const response = await fetch(
-    `https://guestbook-test-rb6n.onrender.com/reviews`
-  );
+  // REMEBER - fetch() by default sends a GET request
+  const response = await fetch(conCurrent);
   const reviews = await response.json();
   createReviews(reviews);
 }
@@ -51,17 +64,14 @@ form.addEventListener("submit", async (event) => {
   console.log(userReview);
 
   // Now I need to send a POST request to my server
-  const response = await fetch(
-    `https://guestbook-test-rb6n.onrender.com/reviews`,
-    {
-      // const response = await fetch(`http://localhost:8080/reviews`, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(userReview),
-    }
-  );
+  const response = await fetch(conCurrent, {
+    // const response = await fetch(`http://localhost:8080/reviews`, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: JSON.stringify(userReview),
+  });
 });
 
 // ===========================================
